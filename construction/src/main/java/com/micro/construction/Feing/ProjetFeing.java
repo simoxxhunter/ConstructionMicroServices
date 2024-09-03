@@ -14,40 +14,18 @@ import java.util.List;
 public interface ProjetFeing {
 
 
-
-    @Autowired
-    private ProjetsService projetsService;
-
     @PostMapping
     public ResponseEntity<ProjetsDTO> createProject(@RequestBody ProjetsDTO projetsDTO) ;
 
     @GetMapping
-    public ResponseEntity<List<ProjetsDTO>> getAllProjects() {
-        List<ProjetsDTO> projets = projetsService.getAllProjects();
-        return ResponseEntity.ok(projets);
-    }
+    public ResponseEntity<List<ProjetsDTO>> getAllProjects() ;
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProjetsDTO> getProjectById(@PathVariable Long id) {
-        ProjetsDTO projet = projetsService.getProjetById(id);
-        if (projet != null) {
-            return ResponseEntity.ok(projet);
-        }
-        return ResponseEntity.notFound().build();
-    }
+    public ResponseEntity<ProjetsDTO> getProjectById(@PathVariable Long id) ;
 
     @PutMapping("/{id}")
-    public ResponseEntity<ProjetsDTO> updateProject(@PathVariable Long id, @RequestBody ProjetsDTO projetsDTO) {
-        ProjetsDTO updatedProject = projetsService.updateProject(id, projetsDTO);
-        if (updatedProject != null) {
-            return ResponseEntity.ok(updatedProject);
-        }
-        return ResponseEntity.notFound().build();
-    }
+    public ResponseEntity<ProjetsDTO> updateProject(@PathVariable Long id, @RequestBody ProjetsDTO projetsDTO) ;
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProject(@PathVariable Long id) {
-        projetsService.deleteProject(id);
-        return ResponseEntity.noContent().build();
-    }
+    public ResponseEntity<Void> deleteProject(@PathVariable Long id) ;
 }
