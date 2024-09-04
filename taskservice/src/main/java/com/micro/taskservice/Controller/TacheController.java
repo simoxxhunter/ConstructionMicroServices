@@ -3,8 +3,9 @@ package com.micro.taskservice.Controller;
 
 
 import com.micro.taskservice.Dto.TachesDto;
-import com.micro.taskservice.Service.ITachesService;
+import com.micro.taskservice.Service.TachesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +15,7 @@ import java.util.List;
 public class TacheController {
 
     @Autowired
-    private ITachesService tachesService;
+    private TachesService tachesService;
 
     @PostMapping("/{idProjet}")
     public ResponseEntity<TachesDto> createProject(@RequestBody TachesDto tachesDto, @PathVariable Long idProjet) {
@@ -56,4 +57,6 @@ public class TacheController {
     public void deleteTachesByProjetId(@PathVariable Long idProjet) {
         tachesService.deleteTachesByProjetId(idProjet);
     }
+
+
 }
