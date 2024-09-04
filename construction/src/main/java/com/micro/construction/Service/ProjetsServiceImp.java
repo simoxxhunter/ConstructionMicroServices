@@ -91,6 +91,7 @@ public class ProjetsServiceImp implements ProjetsService {
         return null;
     }
 
+
     @Override
     public void deleteProject(Long id) {
         String url = "http://localhost:8082/api/Taches/projet/" + id;
