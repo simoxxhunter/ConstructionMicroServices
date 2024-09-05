@@ -1,6 +1,6 @@
 package com.micro.utilisateurservice.config;
 
-import com.project.HelpDesk.service.JwtService;
+import com.micro.utilisateurservice.service.*;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
