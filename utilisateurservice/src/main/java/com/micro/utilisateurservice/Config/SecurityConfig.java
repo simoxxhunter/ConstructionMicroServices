@@ -1,4 +1,4 @@
-package com.micro.utilisateurservice.config;
+package com.micro.utilisateurservice.Config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -26,7 +26,6 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/TECHNICIAN/**").hasRole("TECHNICIAN")
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

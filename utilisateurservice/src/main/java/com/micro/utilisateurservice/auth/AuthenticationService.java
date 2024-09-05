@@ -1,8 +1,8 @@
 package com.micro.utilisateurservice.auth;
 
-import com.project.HelpDesk.model.userModel;
-import com.project.HelpDesk.repository.userRepo;
-import com.project.HelpDesk.service.JwtService;
+import com.micro.utilisateurservice.model.userModel;
+import com.micro.utilisateurservice.Repo.*;
+import com.micro.utilisateurservice.service.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -44,7 +44,7 @@ public class AuthenticationService {
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
-                .role(user.getRole().name())  // Include role in response
+                .role(user.getRole().name())  // obtenir role in response
                 .build();
     }
 

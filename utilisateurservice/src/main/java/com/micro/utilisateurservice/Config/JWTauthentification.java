@@ -1,4 +1,4 @@
-package com.micro.utilisateurservice.config;
+package com.micro.utilisateurservice.Config;
 
 import com.micro.utilisateurservice.service.*;
 import jakarta.servlet.FilterChain;
