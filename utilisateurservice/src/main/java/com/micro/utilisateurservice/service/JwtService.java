@@ -20,6 +20,11 @@ import java.util.function.Function;
 public class JwtService {
     private static final String SECRET_KEY = "sCOvrumKV1xo/2DqnlGGqkP6wbld5tnc9rrEmQTYzDk=";
 
+
+
+    public void validateToken(final String token) {
+        Jwts.parserBuilder().setSigningKey(getSignInKey()).build().parseClaimsJws(token);
+    }
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
